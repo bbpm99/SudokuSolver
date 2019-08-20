@@ -3,12 +3,6 @@
  * 
  * Implementation of a class that represents a Sudoku puzzle and solves
  * it using recursive backtracking.
- *
- * Computer Science 112, Boston University
- *
- * name:
- * email:
- */
 
 import java.io.*;   // allows us to read from a file
 import java.util.*;
@@ -41,7 +35,6 @@ public class Sudoku {
      */
     private boolean[][][] subgridHasVal;
     
-    /*** ADD YOUR ADDITIONAL FIELDS HERE. ***/
     
     /* 
      * Constructs a new Puzzle object, which initially
@@ -58,7 +51,6 @@ public class Sudoku {
          */
         this.subgridHasVal = new boolean[9][9][10];        
         
-        /*** INITIALIZE YOUR ADDITIONAL FIELDS HERE. ***/
 
     }
     
@@ -70,7 +62,6 @@ public class Sudoku {
         this.grid[row][col] = val;
         this.subgridHasVal[row/3][col/3][val] = true;
         
-        /*** UPDATE YOUR ADDITIONAL FIELDS HERE. ***/
 
     }
     
@@ -82,7 +73,6 @@ public class Sudoku {
         this.grid[row][col] = 0;
         this.subgridHasVal[row/3][col/3][val] = false;
         
-        /*** UPDATE YOUR ADDITIONAL FIELDS HERE. ***/
 
     }  
     
@@ -93,7 +83,6 @@ public class Sudoku {
      * values in the row specified as integers separated by spaces.
      * A value of 0 should be used to indicate an empty cell.
      * 
-     * You should not change this method.
      */
     public void readConfig(Scanner input) {
         for (int r = 0; r < 9; r++) {
@@ -110,7 +99,6 @@ public class Sudoku {
     
     /*
      * Displays the current state of the puzzle.
-     * You should not change this method.
      */        
     public void printGrid() {
         for (int r = 0; r < 9; r++) {
@@ -135,7 +123,6 @@ public class Sudoku {
         System.out.println("-");
     }
     
-    /*** ADD ANY ADDITIONAL METHODS HERE. ***/
     
     public void testme() {
     }
@@ -177,7 +164,7 @@ public class Sudoku {
      * and you will need to decide how many parameters you want to use 
      * and what they should mean.
      */
-    private boolean solveRB(int row, int col) {     // ADD IN YOUR PARAMETERS!
+    private boolean solveRB(int row, int col) {     
         if (row >= 9) {
             return true;
         }
@@ -212,7 +199,7 @@ public class Sudoku {
      * Makes the initial call to solveRB, and returns whatever it returns.
      */
     public boolean solve() { 
-        boolean foundSol = this.solveRB(0,0); // ADD THE INITIAL PARAMETER VALS!
+        boolean foundSol = this.solveRB(0,0);
         return foundSol;
     }
     
